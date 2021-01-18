@@ -1,0 +1,14 @@
+CREATE DATABASE TableRelations
+
+USE TableRelations
+CREATE TABLE Passports(
+	PassportID INT PRIMARY KEY IDENTITY NOT NULL,
+	PassportNumber NVARCHAR(50) NOT NULL
+)
+CREATE TABLE Persons(
+	 PersonID INT PRIMARY KEY IDENTITY NOT NULL,
+	 FirstName NVARCHAR(50) NOT NULL,
+	 Salary DEC(6,2) NOT NULL,
+	 PassportID INT REFERENCES Passports(PassportID) NOT NULL
+)
+
